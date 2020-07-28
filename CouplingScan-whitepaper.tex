@@ -1,0 +1,249 @@
+\documentclass[a4paper, 11pt,notoc]{article}
+\pdfoutput=1
+\usepackage{jcappub}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{caption}
+\usepackage{xspace}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{placeins}
+\usepackage{array}
+\usepackage{subcaption}
+
+% Variables
+\newcommand{\sigv}{\ensuremath{\langle \sigma v_{\rm{rel}} \rangle}\xspace}
+\newcommand{\MET}{\ensuremath{E_T^\mathrm{miss}}\xspace}
+\newcommand{\met}{\MET}
+\newcommand{\MT}{\ensuremath{M_{T}}\xspace}
+\newcommand{\pt}{\ensuremath{p_{T}}\xspace}
+
+% Units
+\newcommand{\GeV}{\textrm{GeV}\xspace}
+\newcommand{\gev}{\GeV\xspace}
+\newcommand{\TeV}{\textrm{TeV}\xspace}
+\newcommand{\tev}{\TeV\xspace}
+
+% Particle names
+\newcommand{\lp}{\ensuremath{l^{+}}\xspace}
+\newcommand{\lm}{\ensuremath{l^{-}}\xspace}
+\newcommand{\ttbar}{\ensuremath{\bar{t}t}}
+\newcommand{\bbbar}{\ensuremath{\bar{b}b}}
+\newcommand{\A}{A}
+\newcommand{\pa}{a}
+\newcommand{\pH}{H}
+\newcommand{\pZ}{Z}
+\newcommand{\Hc}{\ensuremath{H^{\pm}}\xspace}
+
+% Particle masses
+\newcommand{\mDM}{\ensuremath{M_{\chi}}\xspace}
+\newcommand{\mdm}{\ensuremath{M_{\chi}}\xspace}
+\newcommand{\mmed}{\ensuremath{M_{\rm{med}}}\xspace}
+\newcommand{\mMed}{\ensuremath{M_{\rm{med}}}\xspace}
+\newcommand{\mZ}{\ensuremath{M_{\rm{Z}}}\xspace}
+\newcommand{\mA}{\ensuremath{M_{A}}\xspace}
+\newcommand{\ma}{\ensuremath{M_{a}}\xspace}
+\newcommand{\mH}{\ensuremath{M_{H}}\xspace}
+\newcommand{\mHc}{\ensuremath{M_{H^{\pm}}}\xspace}
+\newcommand{\mh}{\ensuremath{M_{h}}\xspace}
+\newcommand{\mt}{\ensuremath{M_{t}}\xspace}
+
+% Couplings
+\newcommand{\gDM}{\ensuremath{g_{\rm{DM}}}\xspace}
+\newcommand{\gq}{\ensuremath{g_q}\xspace}
+\newcommand{\gSM}{\gq}
+\newcommand{\gdm}{\gDM}
+\newcommand{\ifb}{\ensuremath{\rm{fb}^{-1}}\xspace}
+
+% Other parameters
+\newcommand{\sinp}{\ensuremath{\sin\theta}\xspace}
+\newcommand{\cosp}{\ensuremath{\cos\theta}\xspace}
+\newcommand{\sinbma}{\ensuremath{\sin(\beta - \alpha)}\xspace}
+\newcommand{\cosbma}{\ensuremath{\cos(\beta - \alpha)}\xspace}
+\newcommand{\tanb}{\ensuremath{\tan\beta}\xspace}
+\newcommand{\lap}[1]{\lambda_{P#1}} % can use like \lap1 , \lap2
+\newcommand{\lam}[1]{\lambda_{#1}} % can use like \lam3
+
+% Search channels
+\newcommand{\hdm}{\ensuremath{h+\textrm{DM}}\xspace}
+\newcommand{\monoh}{\ensuremath{h+\MET}\xspace}
+\newcommand{\monohbb}{\ensuremath{h(bb)+\MET}\xspace}
+\newcommand{\monoz}{\ensuremath{Z+\MET}\xspace}
+\newcommand{\monozll}{\ensuremath{Z(\ell\ell)+\MET}\xspace}
+\newcommand{\monozhad}{\ensuremath{Z(\textrm{had})+\MET}\xspace}
+
+% Software/Program/Model names
+\newcommand{\mg}{\textsc{MadGraph~5}\xspace}
+\newcommand{\mgamcnlo}{MG5\_aMC@NLO\xspace}
+\newcommand{\dmsimp}{\textsc{DMsimp}\xspace}
+\newcommand{\maddm}{\textsc{MadDM}\xspace}
+\newcommand{\hdma}{\ensuremath{\textrm{2HDM+a}}\xspace}
+
+% Misc
+\newcommand{\GamA}{\ensuremath{\Gamma_{A}}\xspace}
+\newcommand{\Uli}{\color{red}}
+\definecolor{cerulean}{RGB}{44,150,207}
+\newcommand{\ATLASComments}{\color{cerulean}}
+\newcommand{\bra}[1]{\langle #1|}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\sens}{\mathcal{S}\xspace}
+\newcommand{\senstot}{\mathcal{S}_\textrm{tot}\xspace}
+\newcommand{\mathsc}[1]{\text{\textsc{#1}}}
+\newcommand{\vev}[1]{\langle {#1} \rangle}
+
+\DeclareMathOperator{\arccot}{arccot}
+
+\def\be   {\begin{equation}}   \def\ee   {\end{equation}}
+\def\ba   {\begin{array}}      \def\ea   {\end{array}}
+\def\bea  {\begin{eqnarray}}   \def\eea  {\end{eqnarray}}
+\def\bean {\begin{eqnarray*}}  \def\eean {\end{eqnarray*}}
+\def\nn{\nonumber}
+
+
+\allowdisplaybreaks
+
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\def\bm#1{\mbox{\boldmath$#1$\unboldmath}} 
+
+\begin{document}
+\title{\begin{boldmath} \huge LHC Dark Matter Working Group:  \\ Title of whitepaper \vspace{7mm} \end{boldmath}}
+
+%%%%%%
+
+%Add your name here!
+
+\author[4]{Andreas~Albert,}
+\affiliation[4]{III. Physikalisches Institut A, RWTH Aachen University, \\
+Physikzentrum, Otto-Blumenthal-Stra{\ss}e, Aachen, Germany}
+
+\author[10,*]{Antonio~Boveia,}
+\affiliation[10]{Ohio State University and Center for Cosmology and Astroparticle Physics, \\
+191 W. Woodruff Avenue Columbus, OH 43210, USA}
+
+\author[11]{Oleg~Brandt,}
+\affiliation[11]{Kirchhoff-Institut f{\"u}r Physik, Ruprecht-Karls-Universit{\"a}t Heidelberg, \\ 
+Im Neuenheimer Feld 227, 69120 Heidelberg, Germany}
+
+\author[12,*]{Caterina~Doglioni,}
+\affiliation[12]{Fysiska institutionen, Lunds universitet, Professorsgatan 1, Lund, Sweden}
+
+\author[21,22,23,*]{Ulrich~Haisch,}
+\affiliation[21]{Max Planck Institute for Physics, F{\"o}hringer Ring 6,  80805 M{\"u}nchen, Germany}
+\affiliation[22]{Rudolf Peierls Centre for Theoretical Physics, University of Oxford, \\ 
+Oxford, OX1 3PN, UK}
+\affiliation[23]{Theoretical Physics Department, CERN, CH-1211 Geneva 23, Switzerland}
+
+%\author[28]{Greg~Landsberg,}
+%\affiliation[28]{Brown University, Dept. of Physics, 182 Hope St, Providence, RI 02912, USA}
+
+\author[8,35]{Priscilla~Pani,}
+\affiliation[35]{DESY Zeuthen, Platanenallee 6, 15738 Zeuthen, Germany}
+
+\author[17,*]{Tim~M.~P.~Tait,}
+
+\affiliation[*]{DMWG organisers}
+
+\hfill CERN-LPCC-2018-XX
+
+\abstract{Dark matter (DM) simplified models...}  
+
+\maketitle
+
+\newpage 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+\label{sec:introduction}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\acknowledgments 
+
+[To be updated] The research of A.~Boveia is supported by the U.S. DOE grant  DE-SC0011726. C.~Doglioni has received funding from the European Research Council under the European Union's Horizon 2020 research and innovation program (grant agreement 679305) and from the Swedish Research Council. U.~Haisch acknowledges the hospitality and support of the CERN Theoretical Physics Department. The work of T.~M.~P.~Tait is supported in part by NSF grant PHY-1316792. We gratefully acknowledge the support by the U.S. DOE. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+
+\section{Appendix}
+\label{app:recast}
+\newpage 
+
+%\bibliography{2HDMa-whitepaper}
+%\bibliographystyle{JHEP}
+
+\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{100}
+
+\bibitem{Kahlhoefer:2017dnp}
+F.~Kahlhoefer, {\it {Review of LHC Dark Matter Searches}},  {\em Int. J. Mod.
+  Phys.} {\bf A32} (2017), no.~13 1730006,
+  [\href{http://arxiv.org/abs/1702.02430}{{\tt arXiv:1702.02430}}].
+
+\bibitem{Bertone:2004pz}
+G.~Bertone, D.~Hooper, and J.~Silk, {\it {Particle dark matter: Evidence,
+  candidates and constraints}},  {\em Phys. Rept.} {\bf 405} (2005) 279--390,
+  [\href{http://arxiv.org/abs/hep-ph/0404175}{{\tt hep-ph/0404175}}].
+
+\bibitem{Abdallah:2015ter}
+J.~Abdallah et~al., {\it {Simplified Models for Dark Matter Searches at the
+  LHC}},  {\em Phys. Dark Univ.} {\bf 9-10} (2015) 8--23,
+  [\href{http://arxiv.org/abs/1506.03116}{{\tt arXiv:1506.03116}}].
+
+\bibitem{Abercrombie:2015wmb}
+D.~Abercrombie et~al., {\it {Dark Matter Benchmark Models for Early LHC Run-2
+  Searches: Report of the ATLAS/CMS Dark Matter Forum}},
+  \href{http://arxiv.org/abs/1507.00966}{{\tt arXiv:1507.00966}}.
+
+\bibitem{Boveia:2016mrp}
+A.~Boveia et~al., {\it {Recommendations on presenting LHC searches for missing
+  transverse energy signals using simplified $s$-channel models of dark
+  matter}},  \href{http://arxiv.org/abs/1603.04156}{{\tt arXiv:1603.04156}}.
+
+\bibitem{Albert:2017onk}
+A.~Albert et~al., {\it {Recommendations of the LHC Dark Matter Working Group:
+  Comparing LHC searches for heavy mediators of dark matter production in
+  visible and invisible decay channels}},
+  \href{http://arxiv.org/abs/1703.05703}{{\tt arXiv:1703.05703}}.
+
+\bibitem{Chala:2015ama}
+M.~Chala, F.~Kahlhoefer, M.~McCullough, G.~Nardini, and K.~Schmidt-Hoberg, {\it
+  {Constraining Dark Sectors with Monojets and Dijets}},  {\em JHEP} {\bf 07}
+  (2015) 089, [\href{http://arxiv.org/abs/1503.05916}{{\tt arXiv:1503.05916}}].
+
+\bibitem{Sjostrand:2014zea}
+T.~Sj{\"o}strand, S.~Ask, J.~R. Christiansen, R.~Corke, N.~Desai, P.~Ilten,
+  S.~Mrenna, S.~Prestel, C.~O. Rasmussen, and P.~Z. Skands, {\it {An
+  Introduction to PYTHIA 8.2}},  {\em Comput. Phys. Commun.} {\bf 191} (2015)
+  159--177, [\href{http://arxiv.org/abs/1410.3012}{{\tt arXiv:1410.3012}}].
+
+\end{thebibliography}\endgroup
+
+\end{document}
