@@ -1,0 +1,326 @@
+\documentclass[a4paper, 11pt,notoc]{article}
+\pdfoutput=1
+\usepackage{jcappub}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{caption}
+\usepackage{xspace}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{placeins}
+\usepackage{array}
+\usepackage{subcaption}
+
+% Variables
+\newcommand{\sigv}{\ensuremath{\langle \sigma v_{\rm{rel}} \rangle}\xspace}
+\newcommand{\MET}{\ensuremath{E_T^\mathrm{miss}}\xspace}
+\newcommand{\met}{\MET}
+\newcommand{\MT}{\ensuremath{M_{T}}\xspace}
+\newcommand{\pt}{\ensuremath{p_{T}}\xspace}
+
+% Units
+\newcommand{\GeV}{\textrm{GeV}\xspace}
+\newcommand{\gev}{\GeV\xspace}
+\newcommand{\TeV}{\textrm{TeV}\xspace}
+\newcommand{\tev}{\TeV\xspace}
+
+% Particle names
+\newcommand{\lp}{\ensuremath{l^{+}}\xspace}
+\newcommand{\lm}{\ensuremath{l^{-}}\xspace}
+\newcommand{\ttbar}{\ensuremath{\bar{t}t}}
+\newcommand{\bbbar}{\ensuremath{\bar{b}b}}
+\newcommand{\A}{A}
+\newcommand{\pa}{a}
+\newcommand{\pH}{H}
+\newcommand{\pZ}{Z}
+\newcommand{\Hc}{\ensuremath{H^{\pm}}\xspace}
+
+% Particle masses
+\newcommand{\mDM}{\ensuremath{M_{\chi}}\xspace}
+\newcommand{\mdm}{\ensuremath{M_{\chi}}\xspace}
+\newcommand{\mmed}{\ensuremath{M_{\rm{med}}}\xspace}
+\newcommand{\mMed}{\ensuremath{M_{\rm{med}}}\xspace}
+\newcommand{\mZ}{\ensuremath{M_{\rm{Z}}}\xspace}
+\newcommand{\mA}{\ensuremath{M_{A}}\xspace}
+\newcommand{\ma}{\ensuremath{M_{a}}\xspace}
+\newcommand{\mH}{\ensuremath{M_{H}}\xspace}
+\newcommand{\mHc}{\ensuremath{M_{H^{\pm}}}\xspace}
+\newcommand{\mh}{\ensuremath{M_{h}}\xspace}
+\newcommand{\mt}{\ensuremath{M_{t}}\xspace}
+
+% Couplings
+\newcommand{\gDM}{\ensuremath{g_{\rm{DM}}}\xspace}
+\newcommand{\gq}{\ensuremath{g_q}\xspace}
+\newcommand{\gSM}{\gq}
+\newcommand{\gdm}{\gDM}
+\newcommand{\ifb}{\ensuremath{\rm{fb}^{-1}}\xspace}
+
+% Other parameters
+\newcommand{\sinp}{\ensuremath{\sin\theta}\xspace}
+\newcommand{\cosp}{\ensuremath{\cos\theta}\xspace}
+\newcommand{\sinbma}{\ensuremath{\sin(\beta - \alpha)}\xspace}
+\newcommand{\cosbma}{\ensuremath{\cos(\beta - \alpha)}\xspace}
+\newcommand{\tanb}{\ensuremath{\tan\beta}\xspace}
+\newcommand{\lap}[1]{\lambda_{P#1}} % can use like \lap1 , \lap2
+\newcommand{\lam}[1]{\lambda_{#1}} % can use like \lam3
+
+% Search channels
+\newcommand{\metplusx}{\ensuremath{\MET+X}\xspace}
+\newcommand{\hdm}{\ensuremath{h+\textrm{DM}}\xspace}
+\newcommand{\monoh}{\ensuremath{h+\MET}\xspace}
+\newcommand{\monohbb}{\ensuremath{h(bb)+\MET}\xspace}
+\newcommand{\monoz}{\ensuremath{Z+\MET}\xspace}
+\newcommand{\monozll}{\ensuremath{Z(\ell\ell)+\MET}\xspace}
+\newcommand{\monozhad}{\ensuremath{Z(\textrm{had})+\MET}\xspace}
+
+% Software/Program/Model names
+\newcommand{\mg}{\textsc{MadGraph~5}\xspace}
+\newcommand{\mgamcnlo}{MG5\_aMC@NLO\xspace}
+\newcommand{\dmsimp}{\textsc{DMsimp}\xspace}
+\newcommand{\maddm}{\textsc{MadDM}\xspace}
+\newcommand{\hdma}{\ensuremath{\textrm{2HDM+a}}\xspace}
+
+% Misc
+\newcommand{\GamA}{\ensuremath{\Gamma_{A}}\xspace}
+\newcommand{\Uli}{\color{red}}
+\definecolor{cerulean}{RGB}{44,150,207}
+\newcommand{\ATLASComments}{\color{cerulean}}
+\newcommand{\bra}[1]{\langle #1|}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\sens}{\mathcal{S}\xspace}
+\newcommand{\senstot}{\mathcal{S}_\textrm{tot}\xspace}
+\newcommand{\mathsc}[1]{\text{\textsc{#1}}}
+\newcommand{\vev}[1]{\langle {#1} \rangle}
+
+\DeclareMathOperator{\arccot}{arccot}
+
+\def\be   {\begin{equation}}   \def\ee   {\end{equation}}
+\def\ba   {\begin{array}}      \def\ea   {\end{array}}
+\def\bea  {\begin{eqnarray}}   \def\eea  {\end{eqnarray}}
+\def\bean {\begin{eqnarray*}}  \def\eean {\end{eqnarray*}}
+\def\nn{\nonumber}
+
+
+\allowdisplaybreaks
+
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\def\bm#1{\mbox{\boldmath$#1$\unboldmath}} 
+
+\begin{document}
+\title{\begin{boldmath} \huge Displaying dark matter constraints from colliders with varying simplified model parameters \vspace{7mm} \end{boldmath}}
+
+%%%%%%
+
+%Add your name here!
+
+\author[1]{Andreas~Albert,}
+\affiliation[1]{Boston University, Boston, MA 02215, USA}
+
+\author[2]{Antonio~Boveia,}
+\affiliation[2]{Ohio State University and Center for Cosmology and Astroparticle Physics, \\
+191 W. Woodruff Avenue Columbus, OH 43210, USA}
+
+\author[3]{Oleg~Brandt,}
+\affiliation[3]{Kirchhoff-Institut f{\"u}r Physik, Ruprecht-Karls-Universit{\"a}t Heidelberg, \\ 
+Im Neuenheimer Feld 227, 69120 Heidelberg, Germany}
+
+\author[4]{Eric~Corrigan,}
+\affiliation[4]{Fysiska institutionen, Lunds universitet, Professorsgatan 1, Lund, Sweden}
+
+\author[1]{Zeynep~Demiragli,}
+
+\author[4]{Caterina~Doglioni}
+
+\author[2]{Boyu~Gao,}
+\affiliation[2]{Ohio State University}
+
+\author[6,*]{Phil~C. Harris,}
+\affiliation[6]{Massachusetts Institute of Technology, 77 Massachusetts Avenue, Cambridge, MA, USA}
+
+\author[7,8,9,*]{Ulrich~Haisch,}
+\affiliation[7]{Max Planck Institute for Physics, F{\"o}hringer Ring 6,  80805 M{\"u}nchen, Germany}
+\affiliation[8]{Rudolf Peierls Centre for Theoretical Physics, University of Oxford, \\ 
+Oxford, OX1 3PN, UK}
+\affiliation[9]{Theoretical Physics Department, CERN, CH-1211 Geneva 23, Switzerland}
+
+\author[10]{Katherine~Pachal,}
+\affiliation[10]{Duke University, Durham, NC 27708, USA}
+
+\author[11]{Priscilla~Pani,}
+\affiliation[11]{DESY Zeuthen, Platanenallee 6, 15738 Zeuthen, Germany}
+
+\author[12,*]{Tim~M.~P.~Tait,}
+\affiliation[12]{University of California Irvine, Irvine, CA 92697, USA}
+
+\author[13]{David~Yu}
+\affiliation[13]{Brown University, Dept. of Physics, 182 Hope St, Providence, RI 02912, USA}
+
+\affiliation[*]{DMWG organisers}
+
+\hfill CERN-LPCC-2018-XX
+
+\abstract{
+Dark matter is one of the main science drivers of the particle and astroparticle physics community.  Determining the nature of dark matter will require a broad approach, with multiple experiments pursuing different experimental hypotheses.
+
+Dark matter particles could be produced at particle colliders. Dark matter searches at collider experiments provide insight on dark matter complementary to searches in direct/indirect detection experiments, and to astrophysical evidence.
+
+In order to compare results from a wide variety of experiments, a common theoretical framework is required. Among the numerous theoretical frameworks that describe dark matter (see e.g.~\cite{doi:10.1146/annurev-astro-082708-101659}, and \cite{Kahlhoefer:2017dnp,doi:10.1146/annurev-nucl-101917-021008} for collider-focused reviews), the ATLAS and CMS experiments at the Large Hadron Collider have adopted a series of simplified models that include dark matter particles as benchmarks for their searches~\cite{ABERCROMBIE2020100371}.
+
+In these models, the interaction between Standard Model (SM) and dark matter particles is mediated by a new particle, called a mediator. The interaction strength is controlled by the couplings of the mediator to dark matter and to SM particles. 
+
+So far, the presentation of LHC results (as well as the presentation of projections of future hadron collider experiments) has focused on four benchmark scenarios with different choices of couplings to quarks and leptons, as recommended by the Dark Matter Working Group~\cite{BOVEIA2020100365, ALBERT2019100377}.
+
+In this work, we plan to describe methods to extend those four benchmark scenarios to scenarios with arbitrary couplings, and release the corresponding code for use in further studies and projections of collider dark matter searches in the framework of simplified models. This will extend the applicability of the comparisons of collider searches to accelerator experiments that are sensitive to smaller couplings, and give a more complete picture of the coupling dependence of the sensitivity of dark matter collider searches when compared to direct and indirect detection searches. By using semi-analytical methods to model the dependence, we plan to drastically reduce the need for computing resources relative to traditional approaches based on the generation of additional simulated signal samples.
+
+We plan to focus on s-channel DM simplified models, where the mediator particle has vector, axial-vector, scalar and pseudoscalar couplings with DM and SM particles. This work will cover collider searches for visible decays of the mediator particles, as well as for searches targeting the invisible particles via the associated production of one or more SM particles~\cite{ATL-PHYS-PUB-2020-021,CMSSummary}.
+}  
+
+\maketitle
+
+%\newpage 
+
+
+\vskip10pt
+
+
+%\bibliography{CouplingScan-whitepaper}
+%\bibliographystyle{JHEP}
+
+%\end{document}
+
+%Here ends the LOI version
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+\label{sec:introduction}
+
+Explain goal - to be able to scale results in one model/set of parameters to any other with reasonable accuracy without resorting to generating events.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Models considered}
+\label{sec:models}
+
+Considering both vector and axial-vector mediator $s$-channel models. Want to consider scalar, pseudoscalar too with some help from the experts! Add citations to original DMWG papers.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Resonant final states}
+\label{sec:resonant}
+
+\subsection{Di-jet and di-jet+X}
+
+\subsection{Di-lepton}
+
+Discuss the di-lepton final state requires accounting for widths more carefully since the resolution is much better.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mono-$X$ final states}
+\label{sec:monox}
+
+% Why mono-x signatures need to contend with off-shell scenarios and thus cannot use the same approximations
+For \metplusx signatures, the relevant final state involves decay of the mediator to dark matter particles, and therefore the off-shell case has to be handled appropriately.
+The approximations used for visible resonant final states in Section~\ref{sec:resonant} require a well-defined decay width to the final state $\Gamma_f$, which goes to zero at $\mMed=2\mDM$ for an invisible final state. The approximation in fact loses validity before this diagonal is fully reached, as the transition across the on-shell to off-shell boundary is smooth. A method for re-scaling \metplusx signatures has therefore been developed with the goal of handling this transition smoothly such that it is applicable in all regimes.
+
+% How have they been handled previously? Discuss method.
+Previously, ATLAS and CMS \metplusx analyses have generated a grid of signal points in one of the four benchmark scenarios at full reconstruction level and used these to determine the region of \mMed-\mDM space excluded in that scenario~\cite{atlas_monojet_36ifb, cms_monojet_12ifb}. Three additional grids of signal points are then generated at leading order and particle level in order to obtain cross section estimates for each point in the additional three benchmark scenarios. The ratio of cross sections between the points in the original scenario and the target scenarios is used to scale the limits, resulting in a new estimate of the excluded and non-excluded points within the target scenario. 
+{\color{red} Someone from CMS please confirm this is accurate for you?} 
+Using signal generation to determine cross sections creates a time and CPU limitation on the number of scenarios which can be explored. 
+% What do we begin from? Mass-mass exclusion plane in one of our models for some fixed set of parameter values
+Therefore the goal of these studies is to use the same starting information - a full signal grid in the \mMed-\mDM for one coupling scenario - and determine a method for rescaling to another target scenario without requiring the generation of many individual signal points. 
+
+% What assumptions do we make? Assume acceptances don't change as a result of varying couplings; 
+% assume k-factors are essentially flat across this plane such that LO rescaling of NLO x-section arrives at fairly decent NLO x-sec.
+% Do we need to back these up? For now, point out that same set of assumptions as with existing method.
+The following assumptions are made in the existing method: first, that the $k$-factors relating LO to NLO cross sections for [a fixed set of couplings are consistent across the \mMed-\mDM plane considered?], and second, that the analysis acceptance at each point is essentially invariant with coupling. The consistency of $k$-factors has been verified by generating NLO signals for a subset of the relevant scenarios and implies that only LO cross sections are required for the re-scaling process {\color{red} Kate: confirm and cite summary paper} 
+The method developed here keeps these same assumptions, producing a re-scaling based only on LO cross sections with no consideration for experimental acceptance. Two approaches are developed, one applying to the re-scaling of a scenario to another set of couplings within the same overall model, and one for when one model is rescaled to another (e.g. vector mediator to axial-vector mediator).
+
+% Cite original paper saying approximations have been given before for scaling on and off-shell, but that we make the simple extension of considering the integral of the entire propagator.
+In the original whitepaper defining the simplified models studied here, it is specified that the cross-section scaling can be estimated using the integral of the Breit-Wigner propagator for the mediator~\cite{Abercrombie:2015wmb}. Several approximations of this integral are given, corresponding to the different regimes of on-shell mediators, off-shell mediators, and effective field theories. In order to smoothly handle the on-shell to off-shell transition, we instead use the full integral of the propagator over the relevant phase space $4 \mDM^2 < s < \infty$:
+\begin{equation}
+\int_{4\mDM^2}^{\infty} \frac{ds}{(s-\mMed^2)^2+\mMed^2\Gamma^2} = \frac{1}{\Gamma\mMed} \left(\frac{\pi}{2} + \arctan{\left(\frac{\mMed^2 - 4 \mDM^2}{\Gamma\mMed}\right)} \right)\,.
+\end{equation}
+% Within a single model: integral of the propagator as sufficient for demonstrating scaling
+The ratio of this quantity for fixed \mDM and \mMed, with $\Gamma$ varying \ldots
+
+% Show monojet example
+
+% Introduce that we need full cross section to go between models.
+
+% Introduce that for cross sections at LO that amounts to only considering this one diagram
+At leading order, the production of an $s$-channel mediator decaying to two dark matter particles includes just one diagram:
+% [add diagram]
+% and we assume ISR radiation of a gluon, photon, etc is independent of the couplings for the DM and therefore cancels in the ratio.
+Thus the LO signal contribution to each \metplusx analysis matches that diagram with additionally the ISR radiation of some object (jet, photon, etc) from one of the incoming quarks. We consider that the properties and probability of this radiation are independent of the couplings of the DM model and therefore act as a consistent scale factor on the cross-section which will cancel in the ratio for a specified pair of masses \mMed, \mDM. 
+
+
+% Introduce full cross sections for vector, axial vector
+% Note that scalar/pseudoscalar are not yet calculated; offer to do them if people agree we are not hiding important assumptions.
+% Do we support the same approach when we don't typically display the same plots? Put some text.
+
+% Show monojet example between models
+
+% Summarise algorithm: use full cross section integral to translate initial plane into any other models desired. 
+% Use propagator scaling to scan coupling exclusions within that model.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Combined examples}
+
+Use existing ATLAS or CMS public data from HEPData to show this working?
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\acknowledgments 
+
+[To be updated] The research of A.~Boveia is supported by the U.S. DOE grant  DE-SC0011726. C.~Doglioni has received funding from the European Research Council under the European Union's Horizon 2020 research and innovation program (grant agreement 679305) and from the Swedish Research Council. U.~Haisch acknowledges the hospitality and support of the CERN Theoretical Physics Department. The work of T.~M.~P.~Tait is supported in part by NSF grant PHY-1316792. We gratefully acknowledge the support by the U.S. DOE. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+
+\section{Appendix}
+\label{app:recast}
+
+Document public code here?
+
+\newpage 
+
+\bibliography{CouplingScan-whitepaper}
+\bibliographystyle{JHEP}
+
+
+
+\end{document}
