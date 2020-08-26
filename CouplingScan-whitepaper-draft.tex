@@ -242,6 +242,8 @@ Discuss the di-lepton final state requires accounting for widths more carefully 
 \section{Mono-$X$ final states}
 \label{sec:monox}
 
+{\color{red} The work in this section has been undertaken with only vector and axial-vector models in mind; if we wish to extend it to scalars that work has yet to be done.}
+
 % Why mono-x signatures need to contend with off-shell scenarios and thus cannot use the same approximations
 For \metplusx signatures, the relevant final state involves decay of the mediator to dark matter particles, and therefore the off-shell case has to be handled appropriately.
 The approximations used for visible resonant final states in Section~\ref{sec:resonant} require a well-defined decay width to the final state $\Gamma_f$, which goes to zero at $\mMed=2\mDM$ for an invisible final state. The approximation in fact loses validity before this diagonal is fully reached, as the transition across the on-shell to off-shell boundary is smooth. A method for re-scaling \metplusx signatures has therefore been developed with the goal of handling this transition smoothly such that it is applicable in all regimes.
@@ -268,19 +270,30 @@ In the original whitepaper defining the simplified models studied here, it is sp
 The ratio of this quantity for fixed \mDM and \mMed, with $\Gamma$ varying \ldots
 
 % Show monojet example
+Add demonstration here. It would be really nice to examples in each of two models to show the within-model scaling and its closure.
+Discuss with Boyu....
 
 % Introduce that we need full cross section to go between models.
 
 % Introduce that for cross sections at LO that amounts to only considering this one diagram
-At leading order, the production of an $s$-channel mediator decaying to two dark matter particles includes just one diagram:
-% [add diagram]
-% and we assume ISR radiation of a gluon, photon, etc is independent of the couplings for the DM and therefore cancels in the ratio.
-Thus the LO signal contribution to each \metplusx analysis matches that diagram with additionally the ISR radiation of some object (jet, photon, etc) from one of the incoming quarks. We consider that the properties and probability of this radiation are independent of the couplings of the DM model and therefore act as a consistent scale factor on the cross-section which will cancel in the ratio for a specified pair of masses \mMed, \mDM. 
-
+At leading order, the production of an $s$-channel vector or axial-vector mediator decaying to two dark matter particles includes just one diagram, $pp\rightarrow Z^\prime \rightarrow \chi \chi$. The LO signal contribution to each \metplusx analysis consists of that diagram with the additional ISR radiation of some object (jet, photon, etc) from one of the incoming quarks. We consider that the properties and probability of this radiation are independent of the couplings of the DM model and therefore act as a consistent scale factor on the cross-section which will cancel in the ratio for a specified pair of masses \mMed, \mDM. Therefore, to calculate the LO scale factor translating between two scenarios with different mediator models, the cross section for that single diagram in both models is sufficient. The parton-level cross sections as functions of the interaction scale $S$ are given by the following equations, discounting scale factors which cancel in the ratio:
 
 % Introduce full cross sections for vector, axial vector
-% Note that scalar/pseudoscalar are not yet calculated; offer to do them if people agree we are not hiding important assumptions.
-% Do we support the same approach when we don't typically display the same plots? Put some text.
+\begin{equation}
+\sigma_V(S) \propto \frac{g_q^2 g_\chi^2 (S + 2\mDM^2)\sqrt{S-4\mDM^2}}{(\Gamma^2\mMed^2 + (\mMed^2 - S)^2)\sqrt{S}}
+\end{equation}
+and
+\begin{equation}
+\sigma_{AV}(S) \propto \frac{g_q^2 g_\chi^2 (S-4\mDM^2)^{3/2}}{(\Gamma^2\mMed^2 + (\mMed^2 - S)^2)\sqrt{S}}\,,
+\end{equation}
+where $\Gamma$ is the total width of the mediator (non-zero even when decays to dark matter are off-shell).
+
+% Discuss PDFs.
+To calculate cross sections with sufficient accuracy for the rescaling procedure, a hadron-level quantity must be calculated accounting for parton distribution functions (PDFs). The full cross section is thus calculated semi-analytically by performing a two dimensional integral over the longitudinal momentum fractions $x_1, x_2$ of the interacting partons within the allowed range. Where $S$ is the squared centre-of-mass energy (i.e. $\sqrt{S} = 13$ TeV), $\hat{s} = x_1 x_2 S$ is the scale of the interaction, and $f^a$ and $f^b$ are the PDFs of the incoming partons, the total cross section is
+\begin{equation}
+\sigma_{V/AV}^{\text{tot}} = \int_{4 \mDM^2}^{\text{S}} \int_{4 \mDM^2}^{x_2 S}  f^a(x_1,\hat{s})  f^b(x_2,\hat{s}) \sigma_{V/AV}(\hat{s}) dx_1 dx_2\,.
+\end{equation}
+This integral is performed numerically in the two models and the ratio at each point is taken as the scale factor to convert between them.
 
 % Show monojet example between models
 
