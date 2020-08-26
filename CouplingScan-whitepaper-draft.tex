@@ -258,16 +258,18 @@ Therefore the goal of these studies is to use the same starting information - a 
 % What assumptions do we make? Assume acceptances don't change as a result of varying couplings; 
 % assume k-factors are essentially flat across this plane such that LO rescaling of NLO x-section arrives at fairly decent NLO x-sec.
 % Do we need to back these up? For now, point out that same set of assumptions as with existing method.
-The following assumptions are made in the existing method: first, that the $k$-factors relating LO to NLO cross sections for [a fixed set of couplings are consistent across the \mMed-\mDM plane considered?], and second, that the analysis acceptance at each point is essentially invariant with coupling. The consistency of $k$-factors has been verified by generating NLO signals for a subset of the relevant scenarios and implies that only LO cross sections are required for the re-scaling process {\color{red} Kate: confirm and cite summary paper} 
-The method developed here keeps these same assumptions, producing a re-scaling based only on LO cross sections with no consideration for experimental acceptance. Two approaches are developed, one applying to the re-scaling of a scenario to another set of couplings within the same overall model, and one for when one model is rescaled to another (e.g. vector mediator to axial-vector mediator).
+Two assumptions are commonly made when applying the existing technique: that first, the $k$-factors relating LO to NLO cross sections, and second, the fiducial acceptance of an analysis are both essentially invariant with coupling for fixed masses. The consistency of $k$-factors has been verified by generating NLO signals for a subset of the relevant scenarios and implies that a ratio of LO cross sections applied to an NLO cross section in the original scenario provides an adequate approximation of an NLO cross section in the target scenario. Invariance of analysis acceptance was verified in the $\met+j$ and $\met+\gamma$ analyses and means no additional factor is required to account for changes in mediator width~\cite{DMSP}.
+The method developed here keeps these same assumptions, producing a re-scaling based only on LO cross sections with no consideration for experimental acceptance. It is recommended that a user consider the validity of these assumptions when applying the new rescaling techniques. 
+
+The semi-analytical rescaling method developed here for \metplusx signatures has two separate components. One can be used to rescale a source scenario to another set of couplings within the same overall model, while the other should be used when the source scenario in one model is rescaled to a target in a different model (e.g. vector mediator to axial-vector mediator).
 
 % Cite original paper saying approximations have been given before for scaling on and off-shell, but that we make the simple extension of considering the integral of the entire propagator.
-In the original whitepaper defining the simplified models studied here, it is specified that the cross-section scaling can be estimated using the integral of the Breit-Wigner propagator for the mediator~\cite{Abercrombie:2015wmb}. Several approximations of this integral are given, corresponding to the different regimes of on-shell mediators, off-shell mediators, and effective field theories. In order to smoothly handle the on-shell to off-shell transition, we instead use the full integral of the propagator over the relevant phase space $4 \mDM^2 < s < \infty$:
+In the original whitepaper defining the simplified models studied here, it is specified that the cross-section scaling can be estimated using the integral of the Breit-Wigner propagator for the mediator~\cite{Abercrombie:2015wmb}. Several approximations of this integral are given, corresponding to the different regimes of on-shell mediators, off-shell mediators, and effective field theories. In order to smoothly handle the on-shell to off-shell transition, we instead use the full integral of the propagator over the permitted phase space $s \geq 4 \mDM^2$:
 \begin{equation}
 \int_{4\mDM^2}^{\infty} \frac{ds}{(s-\mMed^2)^2+\mMed^2\Gamma^2} = \frac{1}{\Gamma\mMed} \left(\frac{\pi}{2} + \arctan{\left(\frac{\mMed^2 - 4 \mDM^2}{\Gamma\mMed}\right)} \right)\,.
 \end{equation}
 % Within a single model: integral of the propagator as sufficient for demonstrating scaling
-The ratio of this quantity for fixed \mDM and \mMed, with $\Gamma$ varying \ldots
+The ratio of this quantity for fixed \mDM and \mMed, with $\Gamma$ varying \ldots   
 
 % Show monojet example
 Add demonstration here. It would be really nice to examples in each of two models to show the within-model scaling and its closure.
@@ -293,7 +295,7 @@ To calculate cross sections with sufficient accuracy for the rescaling procedure
 \begin{equation}
 \sigma_{V/AV}^{\text{tot}} = \int_{4 \mDM^2}^{\text{S}} \int_{4 \mDM^2}^{x_2 S}  f^a(x_1,\hat{s})  f^b(x_2,\hat{s}) \sigma_{V/AV}(\hat{s}) dx_1 dx_2\,.
 \end{equation}
-This integral is performed numerically in the two models and the ratio at each point is taken as the scale factor to convert between them.
+This integral is performed numerically in the two models and the ratio at each point is taken as the scale factor to convert between them. The implementation uses LHAPDF and so provides a wide range of PDF sets and flavour schemes, although results are found to be fairly independent of the selection~\cite{Buckley:2014ana}.
 
 % Show monojet example between models
 
