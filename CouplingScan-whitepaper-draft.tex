@@ -265,17 +265,20 @@ The semi-analytical rescaling method developed here for \metplusx signatures has
 
 % Cite original paper saying approximations have been given before for scaling on and off-shell, but that we make the simple extension of considering the integral of the entire propagator.
 In the original whitepaper defining the simplified models studied here, it is specified that the cross-section scaling can be estimated using the integral of the Breit-Wigner propagator for the mediator~\cite{Abercrombie:2015wmb}. Several approximations of this integral are given, corresponding to the different regimes of on-shell mediators, off-shell mediators, and effective field theories. In order to smoothly handle the on-shell to off-shell transition, we instead use the full integral of the propagator over the permitted phase space $s \geq 4 \mDM^2$:
-\begin{equation}
-\int_{4\mDM^2}^{\infty} \frac{ds}{(s-\mMed^2)^2+\mMed^2\Gamma^2} = \frac{1}{\Gamma\mMed} \left(\frac{\pi}{2} + \arctan{\left(\frac{\mMed^2 - 4 \mDM^2}{\Gamma\mMed}\right)} \right)\,.
-\end{equation}
+\begin{align}
+\mathcal{I}_{\text{prop}} =&\  g_q^2 g_\chi^2 \int_{4\mDM^2}^{\infty} \frac{ds}{(s-\mMed^2)^2+\mMed^2\Gamma^2} \\
+=&\  \frac{g_q^2 g_\chi^2}{\Gamma\mMed} \left(\frac{\pi}{2} + \arctan{\left(\frac{\mMed^2 - 4 \mDM^2}{\Gamma\mMed}\right)} \right)\,.
+\end{align}
 % Within a single model: integral of the propagator as sufficient for demonstrating scaling
-The ratio of this quantity for fixed \mDM and \mMed, with $\Gamma$ varying \ldots   
+Coupling dependence comes not only from the explicit $g_q^2 g_\chi^2$ factor but is also embedded in the value of $\Gamma$ (see width definitions in Ref.~\cite{Albert:2017onk}).
+$\mathcal{I}_{\text{prop}}$ is easily analytically calculable and the ratio of its value for two different coupling scenarios at a given \mDM and \mMed provides a robust estimate of the cross section in the target scenario, so long as both assume the same mediator type.
 
 % Show monojet example
-Add demonstration here. It would be really nice to examples in each of two models to show the within-model scaling and its closure.
+Add demonstration here. It would be really nice to have examples in each of two models to show the within-model scaling and its closure.
 Discuss with Boyu....
 
 % Introduce that we need full cross section to go between models.
+However, a ratio based on $\mathcal{I}_{\text{prop}}$ when the target scenario includes a different mediator model than the source scenario. [Elaborate]
 
 % Introduce that for cross sections at LO that amounts to only considering this one diagram
 At leading order, the production of an $s$-channel vector or axial-vector mediator decaying to two dark matter particles includes just one diagram, $pp\rightarrow Z^\prime \rightarrow \chi \chi$. The LO signal contribution to each \metplusx analysis consists of that diagram with the additional ISR radiation of some object (jet, photon, etc) from one of the incoming quarks. We consider that the properties and probability of this radiation are independent of the couplings of the DM model and therefore act as a consistent scale factor on the cross-section which will cancel in the ratio for a specified pair of masses \mMed, \mDM. Therefore, to calculate the LO scale factor translating between two scenarios with different mediator models, the cross section for that single diagram in both models is sufficient. The parton-level cross sections as functions of the interaction scale $S$ are given by the following equations, discounting scale factors which cancel in the ratio:
