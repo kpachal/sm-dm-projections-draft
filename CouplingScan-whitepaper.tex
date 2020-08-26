@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt,notoc]{article}
+\documentclass[a4paper,11pt,notoc]{article}
 \pdfoutput=1
 \usepackage{jcappub}
 \usepackage{graphicx}
@@ -133,47 +133,43 @@
 %Add your name here!
 
 \author[1]{Andreas~Albert,}
-\author[1]{Zeynep~Demiragli,}
-\affiliation[1]{Boston University, Dept.\ of Physics, 590 Commonwealth Avenue, Boston, MA 02215, USA}
-
+\affiliation[1]{Boston University, Dept.\ of Physics, 590 Commonwealth Avenue, Boston, \\ MA 02215, USA}
 
 \author[2]{Antonio~Boveia,}
 \affiliation[2]{Ohio State University and Center for Cosmology and Astroparticle Physics, \\
 191 W. Woodruff Avenue Columbus, OH 43210, USA}
 
 \author[3]{Oleg~Brandt,}
-\affiliation[3]{Kirchhoff-Institut f{\"u}r Physik, Ruprecht-Karls-Universit{\"a}t Heidelberg, \\ 
-Im Neuenheimer Feld 227, 69120 Heidelberg, Germany}
+\affiliation[3]{Cavendish Laboratory, JJ Thomson Avenue, Cambridge CB3 0HE, UK}
 
 \author[4]{Eric~Corrigan,}
 \affiliation[4]{Fysiska institutionen, Lunds universitet, Professorsgatan 1, Lund, Sweden}
 
-\author[4]{Caterina~Doglioni}
+\author[1]{Zeynep~Demiragli,}
+
+\author[4]{Caterina~Doglioni,}
 
 \author[2]{Boyu~Gao,}
-\affiliation[2]{Ohio State University}
+
+\author[5,*]{Ulrich~Haisch,}
+\affiliation[5]{Max Planck Institute for Physics, F{\"o}hringer Ring 6,  80805 M{\"u}nchen, Germany}
 
 \author[6,*]{Philip~Harris,}
 \affiliation[6]{Massachusetts Institute of Technology, 77 Massachusetts Avenue, Cambridge, MA, USA}
 
-\author[7,8,9,*]{Ulrich~Haisch,}
-\affiliation[7]{Max Planck Institute for Physics, F{\"o}hringer Ring 6,  80805 M{\"u}nchen, Germany}
-\affiliation[8]{Rudolf Peierls Centre for Theoretical Physics, University of Oxford, \\ 
-Oxford, OX1 3PN, UK}
-\affiliation[9]{Theoretical Physics Department, CERN, CH-1211 Geneva 23, Switzerland}
+\author[7]{Greg~Landsberg,}
+\affiliation[7]{Brown University, Dept.\ of Physics, 182 Hope St, Providence, RI 02912, USA}
 
-\author[10]{Katherine~Pachal,}
-\affiliation[10]{Duke University, Durham, NC 27708, USA}
+\author[8]{Katherine~Pachal,}
+\affiliation[8]{Duke University, Durham, NC 27708, USA}
 
-\author[11]{Priscilla~Pani,}
-\affiliation[11]{DESY Zeuthen, Platanenallee 6, 15738 Zeuthen, Germany}
+\author[9]{Priscilla~Pani,}
+\affiliation[9]{DESY Zeuthen, Platanenallee 6, 15738 Zeuthen, Germany}
 
-\author[12,*]{Tim~M.~P.~Tait,}
-\affiliation[12]{University of California Irvine, Irvine, CA 92697, USA}
+\author[10,*]{Tim~M.~P.~Tait,}
+\affiliation[10]{University of California Irvine, Irvine, CA 92697, USA}
 
-\author[13]{David~Yu,}
-\author[13]{Greg~Landsberg,}
-\affiliation[13]{Brown University, Dept.\ of Physics, 182 Hope St, Providence, RI 02912, USA}
+\author[7]{David~Yu}
 
 \affiliation[*]{DMWG organisers}
 
@@ -182,26 +178,31 @@ Oxford, OX1 3PN, UK}
 %\abstract{
 %}  
 
+\renewcommand\contentsname{} % the empty name
+
+\notoc 
+
 \maketitle
 
 %\newpage 
 
+\vskip20pt
 
-\vskip10pt
 
-Dark matter is one of the main science drivers of the particle and astroparticle physics community.  Determining the nature of dark matter will require a broad approach, with multiple experiments pursuing different experimental hypotheses.
+Dark matter~(DM) is one of the main science drivers of the particle and astroparticle physics community.  
+Determining the nature of DM will require a broad approach, with multiple experiments pursuing different experimental hypotheses.
 
-Dark matter particles could be produced at particle colliders. Dark matter searches at collider experiments provide insight on dark matter complementary to searches in direct/indirect detection experiments, and to astrophysical evidence.
+DM particles could be produced at particle colliders, and in such a case DM searches at collider experiments provide insight on DM complementary to searches in direct and indirect detection experiments, and to astrophysical evidence.
 
-In order to compare results from a wide variety of experiments, a common theoretical framework is required. Among the numerous theoretical frameworks that describe dark matter (see e.g.~\cite{doi:10.1146/annurev-astro-082708-101659}, and \cite{Kahlhoefer:2017dnp,doi:10.1146/annurev-nucl-101917-021008} for collider-focused reviews), the ATLAS and CMS experiments at the Large Hadron Collider have adopted a series of simplified models that include dark matter particles as benchmarks for their searches~\cite{ABERCROMBIE2020100371}.
+In order to compare results from a wide variety of experiments, a common theoretical framework is required. Among the numerous theoretical models that describe DM  (see~e.g.~\cite{doi:10.1146/annurev-astro-082708-101659}, and \cite{Kahlhoefer:2017dnp,doi:10.1146/annurev-nucl-101917-021008} for collider-focused reviews), the ATLAS and CMS experiments at the Large Hadron Collider~(LHC) have adopted a series of simplified models that include DM  particles as benchmarks for their searches~\cite{ABERCROMBIE2020100371}.
 
-In these models, the interaction between Standard Model (SM) and dark matter particles is mediated by a new particle, called a mediator. The interaction strength is controlled by the couplings of the mediator to dark matter and to SM particles. 
+In these models, the interaction between Standard Model (SM) and the DM particles is mediated by a new particle, called a mediator. The interaction strength is controlled by the couplings of the mediator to DM and to SM particles. 
 
-So far, the presentation of LHC results (as well as the presentation of projections of future hadron collider experiments) has focused on four benchmark scenarios with different choices of couplings to quarks and leptons, as recommended by the Dark Matter Working Group~\cite{BOVEIA2020100365, ALBERT2019100377}.
+So far, the presentation of LHC results as well as the presentation of projections of future hadron collider experiments has focused on four benchmark scenarios with different choices of couplings to quarks and leptons, as recommended by the Dark Matter Working Group~\cite{BOVEIA2020100365, ALBERT2019100377}.
 
-In this work, we plan to describe methods to extend those four benchmark scenarios to scenarios with arbitrary couplings, and release the corresponding code for use in further studies and projections of collider dark matter searches in the framework of simplified models. This will extend the applicability of the comparisons of collider searches to accelerator experiments that are sensitive to smaller couplings, and give a more complete picture of the coupling dependence of the sensitivity of dark matter collider searches when compared to direct and indirect detection searches. By using semi-analytical methods to model the dependence, we plan to drastically reduce the need for computing resources relative to traditional approaches based on the generation of additional simulated signal samples.
+In this work, we plan to describe methods to extend those four benchmark scenarios to scenarios with arbitrary couplings, and release the corresponding code for use in further studies and projections of collider DM searches in the framework of simplified models. This will extend the applicability of the comparisons of collider searches to accelerator experiments that are sensitive to smaller couplings, and give a more complete picture of the coupling dependence of the sensitivity of DM collider searches when compared to direct and indirect detection searches. By using semi-analytical methods to model the dependence, we plan to drastically reduce the need for computing resources relative to traditional approaches based on the generation of additional simulated signal samples.
 
-We plan to focus on s-channel DM simplified models, where the mediator particle has vector, axial-vector, scalar and pseudoscalar couplings with DM and SM particles. This work will cover collider searches for visible decays of the mediator particles, as well as for searches targeting the invisible particles via the associated production of one or more SM particles~\cite{ATL-PHYS-PUB-2020-021,CMSSummary}.
+We plan to focus on $s$-channel DM simplified models, where the mediator particle has either vector, axial-vector, scalar or pseudoscalar couplings with DM and SM particles. This work will cover collider searches for visible decays of the mediator particles, as well as for searches targeting the invisible particles via the associated production of one or more SM particles~\cite{ATL-PHYS-PUB-2020-021,CMSSummary}.
 
 \bibliography{CouplingScan-whitepaper}
 \bibliographystyle{JHEP}
