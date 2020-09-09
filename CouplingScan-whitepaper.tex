@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt,notoc]{article}
+\documentclass[a4paper, 11pt,notoc]{article}
 \pdfoutput=1
 \usepackage{jcappub}
 \usepackage{graphicx}
@@ -66,6 +66,7 @@
 \newcommand{\lam}[1]{\lambda_{#1}} % can use like \lam3
 
 % Search channels
+\newcommand{\metplusx}{\ensuremath{\MET+X}\xspace}
 \newcommand{\hdm}{\ensuremath{h+\textrm{DM}}\xspace}
 \newcommand{\monoh}{\ensuremath{h+\MET}\xspace}
 \newcommand{\monohbb}{\ensuremath{h(bb)+\MET}\xspace}
@@ -126,7 +127,7 @@
 \def\bm#1{\mbox{\boldmath$#1$\unboldmath}} 
 
 \begin{document}
-\title{\begin{boldmath} \huge Snowmass LOI: Displaying dark matter constraints from colliders with varying simplified model parameters \vspace{7mm} \end{boldmath}}
+\title{\begin{boldmath} \huge Displaying dark matter constraints from colliders with varying simplified model parameters \vspace{7mm} \end{boldmath}}
 
 %%%%%%
 
@@ -163,7 +164,7 @@
 \affiliation[7]{Brown University, Dept.\ of Physics, 182 Hope St, Providence, RI 02912, USA}
 
 \author[7]{Alexander~Moreno,}
-\affiliation[7]{Universidad Antonio Nari\~no, Facultad de Ciencias, Departamento de F\'isica, Carrera 10 No. 17-35, Ibagu\'e, Colombia}
+\affiliation[7]{Universidad Antonio Nari\~{n}o, Bogotá, Cundinamarca, Colombia}
 
 \author[9]{Katherine~Pachal,}
 \affiliation[9]{Duke University, Durham, NC 27708, USA}
@@ -171,61 +172,55 @@
 \author[10,*]{Priscilla~Pani,}
 \affiliation[10]{DESY Zeuthen, Platanenallee 6, 15738 Zeuthen, Germany}
 
+\author[14]{Federica~Piazza,}
+\affiliation[14]{INFN Milano, Via G. Celoria, 16 I - 20133 Milano, Italy}
+
 \author[11,*]{Tim~M.~P.~Tait,}
 \affiliation[11]{University of California Irvine, Irvine, CA 92697, USA}
 
 \author[7]{David~Yu,}
 
 \author[12]{Felix~Yu,}
-\affiliation[12]{Institut f{\"u}r Physik WA THEP, Johannes Gutenberg-Universit{\"a}t Mainz, Staudingerweg 7, 55128 Mainz, Germany}
+\affiliation[12]{Institut für Physik WA THEP, Johannes Gutenberg-Universität Mainz, Staudingerweg 7, 55128 Mainz, Germany}
 
 \author[13]{Lian-Tao~Wang}
 \affiliation[13]{Department of Physics, University of Chicago, Chicago, IL. 60637 USA}
 
 \affiliation[*]{LHC DM WG conveners}
 
-\affiliation[]{}
-\affiliation[]{Contact address: lhc-dmwg-contributors-couplingscan@cern.ch}
 
-%\hfill CERN-LPCC-2018-XX
+\hfill CERN-LPCC-2020-XX
 
-%\abstract{
-%}  
+\abstract{
+Dark matter is one of the main science drivers of the particle and astroparticle physics community.  Determining the nature of dark matter will require a broad approach, with multiple experiments pursuing different experimental hypotheses.
 
-\renewcommand\contentsname{} % the empty name
+Dark matter particles could be produced at particle colliders. Dark matter searches at collider experiments provide insight on dark matter complementary to searches in direct/indirect detection experiments, and to astrophysical evidence.
 
-\notoc 
+In order to compare results from a wide variety of experiments, a common theoretical framework is required. Among the numerous theoretical frameworks that describe dark matter (see e.g.~\cite{doi:10.1146/annurev-astro-082708-101659}, and \cite{Kahlhoefer:2017dnp,doi:10.1146/annurev-nucl-101917-021008} for collider-focused reviews), the ATLAS and CMS experiments at the Large Hadron Collider have adopted a series of simplified models that include dark matter particles as benchmarks for their searches~\cite{ABERCROMBIE2020100371}.
+
+In these models, the interaction between Standard Model (SM) and dark matter particles is mediated by a new particle, called a mediator. The interaction strength is controlled by the couplings of the mediator to dark matter and to SM particles. 
+
+So far, the presentation of LHC results (as well as the presentation of projections of future hadron collider experiments) has focused on four benchmark scenarios with different choices of couplings to quarks and leptons, as recommended by the Dark Matter Working Group~\cite{BOVEIA2020100365, ALBERT2019100377}.
+
+In this work, we plan to describe methods to extend those four benchmark scenarios to scenarios with arbitrary couplings, and release the corresponding code for use in further studies and projections of collider dark matter searches in the framework of simplified models. This will extend the applicability of the comparisons of collider searches to accelerator experiments that are sensitive to smaller couplings, and give a more complete picture of the coupling dependence of the sensitivity of dark matter collider searches when compared to direct and indirect detection searches. By using semi-analytical methods to model the dependence, we plan to drastically reduce the need for computing resources relative to traditional approaches based on the generation of additional simulated signal samples.
+
+We plan to focus on s-channel DM simplified models, where the mediator particle has vector, axial-vector, scalar and pseudoscalar couplings with DM and SM particles. This work will cover collider searches for visible decays of the mediator particles, as well as for searches targeting the invisible particles via the associated production of one or more SM particles~\cite{ATL-PHYS-PUB-2020-021,CMSSummary}.
+}  
 
 \maketitle
 
 %\newpage 
 
-\vskip20pt
+
+\vskip10pt
 
 
-Dark matter~(DM) is one of the main science drivers of the particle and astroparticle physics community.  
-Determining the nature of DM will require a broad approach, with multiple experiments pursuing different experimental hypotheses.
+%\bibliography{CouplingScan-whitepaper}
+%\bibliographystyle{JHEP}
 
-DM particles could be produced at particle colliders, and in such a case DM searches at collider experiments provide insight on DM complementary to searches in direct and indirect detection experiments, and to astrophysical evidence.
-
-In order to compare results from a wide variety of experiments, a common theoretical framework is required. Among the numerous theoretical models that describe DM  (see~e.g.~\cite{doi:10.1146/annurev-astro-082708-101659}, and \cite{Kahlhoefer:2017dnp,doi:10.1146/annurev-nucl-101917-021008} for collider-focused reviews), the ATLAS and CMS experiments at the Large Hadron Collider~(LHC) have adopted a series of simplified models that include DM  particles as benchmarks for their searches~\cite{ABERCROMBIE2020100371}.
-
-In these models, the interaction between Standard Model (SM) and the DM particles is mediated by a new particle, called a mediator. The interaction strength is controlled by the couplings of the mediator to DM and to SM particles. 
-
-So far, the presentation of LHC results as well as the presentation of projections of future hadron collider experiments has focused on four benchmark scenarios with different choices of couplings to quarks and leptons, as recommended by the Dark Matter Working Group~\cite{BOVEIA2020100365, ALBERT2019100377}.
-
-In this work, we plan to describe methods to extend those four benchmark scenarios to scenarios with arbitrary couplings, and release the corresponding code for use in further studies and projections of collider DM searches in the framework of simplified models. This will extend the applicability of the comparisons of collider searches to accelerator experiments that are sensitive to smaller couplings, and give a more complete picture of the coupling dependence of the sensitivity of DM collider searches when compared to direct and indirect detection searches. By using semi-analytical methods to model the dependence, we plan to drastically reduce the need for computing resources relative to traditional approaches based on the generation of additional simulated signal samples.
-
-We plan to focus on $s$-channel DM simplified models, where the mediator particle has either vector, axial-vector, scalar or pseudoscalar couplings with DM and SM particles. This work will cover collider searches for visible decays of the mediator particles, as well as for searches targeting the invisible particles via the associated production of one or more SM particles~\cite{ATL-PHYS-PUB-2020-021,CMSSummary}.
-
-\bibliography{CouplingScan-whitepaper}
-\bibliographystyle{JHEP}
-
-\end{document}
+%\end{document}
 
 %Here ends the LOI version
-
-\newpage 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -241,12 +236,12 @@ Explain goal - to be able to scale results in one model/set of parameters to any
 \section{Models considered}
 \label{sec:models}
 
-Considering both vector and axial-vector mediator $s$-channel models - be sure to add citations to original DMWG papers.
+Considering both vector and axial-vector mediator $s$-channel models. Want to consider scalar, pseudoscalar too with some help from the experts! Add citations to original DMWG papers.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resonant final states}
-
+\label{sec:resonant}
 
 \subsection{Di-jet and di-jet+X}
 
@@ -256,15 +251,94 @@ Discuss the di-lepton final state requires accounting for widths more carefully 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Mono-x final states}
+\section{Mono-$X$ final states}
+\label{sec:monox}
 
+{\color{red} The work in this section has been undertaken with only vector and axial-vector models in mind; if we wish to extend it to scalars that work has yet to be done.}
 
+% Why mono-x signatures need to contend with off-shell scenarios and thus cannot use the same approximations
+For \metplusx signatures, the relevant final state involves decay of the mediator to dark matter particles, and therefore the off-shell case has to be handled appropriately.
+The approximations used for visible resonant final states in Section~\ref{sec:resonant} require a well-defined decay width to the final state $\Gamma_f$, which goes to zero at $\mMed=2\mDM$ for an invisible final state. The approximation in fact loses validity before this diagonal is fully reached, as the transition across the on-shell to off-shell boundary is smooth. A method for re-scaling \metplusx signatures has therefore been developed with the goal of handling this transition smoothly such that it is applicable in all regimes.
+
+% How have they been handled previously? Discuss method.
+Previously, ATLAS and CMS \metplusx analyses have generated a grid of signal points in one of the four benchmark scenarios at full reconstruction level and used these to determine the region of \mMed-\mDM space excluded in that scenario~\cite{atlas_monojet_36ifb, cms_monojet_12ifb}. Three additional grids of signal points are then generated at leading order and particle level in order to obtain cross section estimates for each point in the additional three benchmark scenarios. The ratio of cross sections between the points in the original scenario and the target scenarios is used to scale the limits, resulting in a new estimate of the excluded and non-excluded points within the target scenario. 
+{\color{red} Someone from CMS please confirm this is accurate for you?} 
+Using signal generation to determine cross sections creates a time and CPU limitation on the number of scenarios which can be explored. 
+% What do we begin from? Mass-mass exclusion plane in one of our models for some fixed set of parameter values
+Therefore the goal of these studies is to use the same starting information - a full signal grid in the \mMed-\mDM for one coupling scenario - and determine a method for rescaling to another target scenario without requiring the generation of many individual signal points. 
+
+% What assumptions do we make? Assume acceptances don't change as a result of varying couplings; 
+% assume k-factors are essentially flat across this plane such that LO rescaling of NLO x-section arrives at fairly decent NLO x-sec.
+% Do we need to back these up? For now, point out that same set of assumptions as with existing method.
+Two assumptions are commonly made when applying the existing technique: that first, the $k$-factors relating LO to NLO cross sections, and second, the fiducial acceptance of an analysis are both essentially invariant with coupling for fixed masses. The consistency of $k$-factors has been verified by generating NLO signals for a subset of the relevant scenarios and implies that a ratio of LO cross sections applied to an NLO cross section in the original scenario provides an adequate approximation of an NLO cross section in the target scenario. Invariance of analysis acceptance was verified in the $\met+j$ and $\met+\gamma$ analyses and means no additional factor is required to account for changes in mediator width~\cite{DMSP}.
+The method developed here keeps these same assumptions, producing a re-scaling based only on LO cross sections with no consideration for experimental acceptance. It is recommended that a user consider the validity of these assumptions when applying the new rescaling techniques. 
+
+The semi-analytical rescaling method developed here for \metplusx signatures has two separate components. One can be used to rescale a source scenario to another set of couplings within the same overall model, while the other should be used when the source scenario in one model is rescaled to a target in a different model (e.g. vector mediator to axial-vector mediator).
+
+% Cite original paper saying approximations have been given before for scaling on and off-shell, but that we make the simple extension of considering the integral of the entire propagator.
+In the original whitepaper defining the simplified models studied here, it is specified that the cross-section scaling can be estimated using the integral of the Breit-Wigner propagator for the mediator~\cite{Abercrombie:2015wmb}. Several approximations of this integral are given, corresponding to the different regimes of on-shell mediators, off-shell mediators, and effective field theories. In order to smoothly handle the on-shell to off-shell transition, we instead use the full integral of the propagator over the permitted phase space $s \geq 4 \mDM^2$:
+\begin{align}
+\mathcal{I}_{\text{prop}} =&\  g_q^2 g_\chi^2 \int_{4\mDM^2}^{\infty} \frac{ds}{(s-\mMed^2)^2+\mMed^2\Gamma^2} \\
+=&\  \frac{g_q^2 g_\chi^2}{\Gamma\mMed} \left(\frac{\pi}{2} + \arctan{\left(\frac{\mMed^2 - 4 \mDM^2}{\Gamma\mMed}\right)} \right)\,.
+\end{align}
+% Within a single model: integral of the propagator as sufficient for demonstrating scaling
+Coupling dependence comes not only from the explicit $g_q^2 g_\chi^2$ factor but is also embedded in the value of $\Gamma$ (see width definitions in Ref.~\cite{Albert:2017onk}).
+$\mathcal{I}_{\text{prop}}$ is easily analytically calculable and the ratio of its value for two different coupling scenarios at a given \mDM and \mMed provides a robust estimate of the cross section in the target scenario, so long as both assume the same mediator type.
+
+% Show example
+The $\mathcal{I}_{\text{prop}}$ scaling procedure is illustrated in Figure~\ref{fig:propagator_scaling} using the ATLAS $\met+\gamma$ analysis in 36 \ifb of data~\cite{monophoton}. Circles show the locations of the signal points used; white points are excluded while red points are not excluded. 
+%-----------------------------------
+\begin{figure}[htp!]
+  \begin{center}
+  \begin{subfigure}[b]{0.49\textwidth}  
+    \includegraphics[width=\textwidth]{figures/monox/EXOT-2016-27_AV_gq0p25_gchi1p0_gl0p0_compare.pdf}
+    \caption{}
+    \label{subfig:monophoton_A1}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}  
+    \includegraphics[width=\textwidth]{figures/monox/EXOT-2016-27_AV_gq0p1_gchi1p0_gl0p1_compare.pdf}
+    \caption{}
+    \label{subfig:monophoton_A2}  
+  \end{subfigure}
+  
+  \caption{A caption}
+  \label{fig:propagator_scaling}
+  \end{center}
+\end{figure}
+%-----------------------------------
+
+% Introduce that we need full cross section to go between models.
+However, a ratio based on $\mathcal{I}_{\text{prop}}$ when the target scenario includes a different mediator model than the source scenario\ldots [Elaborate]
+
+% Introduce that for cross sections at LO that amounts to only considering this one diagram
+At leading order, the production of an $s$-channel vector or axial-vector mediator decaying to two dark matter particles includes just one diagram, $pp\rightarrow Z^\prime \rightarrow \chi \chi$. The LO signal contribution to each \metplusx analysis consists of that diagram with the additional ISR radiation of some object (jet, photon, etc) from one of the incoming quarks. We consider that the properties and probability of this radiation are independent of the couplings of the DM model and therefore act as a consistent scale factor on the cross-section which will cancel in the ratio for a specified pair of masses \mMed, \mDM. Therefore, to calculate the LO scale factor translating between two scenarios with different mediator models, the cross section for that single diagram in both models is sufficient. The parton-level cross sections as functions of the interaction scale $S$ are given by the following equations, discounting scale factors which cancel in the ratio:
+
+% Introduce full cross sections for vector, axial vector
+\begin{equation}
+\sigma_V(S) \propto \frac{g_q^2 g_\chi^2 (S + 2\mDM^2)\sqrt{S-4\mDM^2}}{(\Gamma^2\mMed^2 + (\mMed^2 - S)^2)\sqrt{S}}
+\end{equation}
+and
+\begin{equation}
+\sigma_{AV}(S) \propto \frac{g_q^2 g_\chi^2 (S-4\mDM^2)^{3/2}}{(\Gamma^2\mMed^2 + (\mMed^2 - S)^2)\sqrt{S}}\,,
+\end{equation}
+where $\Gamma$ is the total width of the mediator (non-zero even when decays to dark matter are off-shell).
+
+% Discuss PDFs.
+To calculate cross sections with sufficient accuracy for the rescaling procedure, a hadron-level quantity must be calculated accounting for parton distribution functions (PDFs). The full cross section is thus calculated semi-analytically by performing a two dimensional integral over the longitudinal momentum fractions $x_1, x_2$ of the interacting partons within the allowed range. Where $S$ is the squared centre-of-mass energy (i.e. $\sqrt{S} = 13$ TeV), $\hat{s} = x_1 x_2 S$ is the scale of the interaction, and $f^a$ and $f^b$ are the PDFs of the incoming partons, the total cross section is
+\begin{equation}
+\sigma_{V/AV}^{\text{tot}} = \int_{4 \mDM^2}^{\text{S}} \int_{4 \mDM^2}^{x_2 S}  f^a(x_1,\hat{s})  f^b(x_2,\hat{s}) \sigma_{V/AV}(\hat{s}) dx_1 dx_2\,.
+\end{equation}
+This integral is performed numerically in the two models and the ratio at each point is taken as the scale factor to convert between them. The implementation uses LHAPDF and so provides a wide range of PDF sets and flavour schemes, although results are found to be fairly independent of the selection~\cite{Buckley:2014ana}.
+
+% Show monojet example between models
+
+% Summarise algorithm: use full cross section integral to translate initial plane into any other models desired. 
+% Use propagator scaling to scan coupling exclusions within that model.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Example}
+\section{Combined examples}
 
-Use existing ATLAS or CMS public data from HEPData to show this working?
-
+Would like to show a full summary plot with 36 ifb results from a variety of channels, then scale to at least one set of as-yet-unexplored couplings, to illustrate the power
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}

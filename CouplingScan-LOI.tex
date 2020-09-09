@@ -1,0 +1,299 @@
+\documentclass[a4paper,11pt,notoc]{article}
+\pdfoutput=1
+\usepackage{jcappub}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{caption}
+\usepackage{xspace}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{placeins}
+\usepackage{array}
+\usepackage{subcaption}
+
+% Variables
+\newcommand{\sigv}{\ensuremath{\langle \sigma v_{\rm{rel}} \rangle}\xspace}
+\newcommand{\MET}{\ensuremath{E_T^\mathrm{miss}}\xspace}
+\newcommand{\met}{\MET}
+\newcommand{\MT}{\ensuremath{M_{T}}\xspace}
+\newcommand{\pt}{\ensuremath{p_{T}}\xspace}
+
+% Units
+\newcommand{\GeV}{\textrm{GeV}\xspace}
+\newcommand{\gev}{\GeV\xspace}
+\newcommand{\TeV}{\textrm{TeV}\xspace}
+\newcommand{\tev}{\TeV\xspace}
+
+% Particle names
+\newcommand{\lp}{\ensuremath{l^{+}}\xspace}
+\newcommand{\lm}{\ensuremath{l^{-}}\xspace}
+\newcommand{\ttbar}{\ensuremath{\bar{t}t}}
+\newcommand{\bbbar}{\ensuremath{\bar{b}b}}
+\newcommand{\A}{A}
+\newcommand{\pa}{a}
+\newcommand{\pH}{H}
+\newcommand{\pZ}{Z}
+\newcommand{\Hc}{\ensuremath{H^{\pm}}\xspace}
+
+% Particle masses
+\newcommand{\mDM}{\ensuremath{M_{\chi}}\xspace}
+\newcommand{\mdm}{\ensuremath{M_{\chi}}\xspace}
+\newcommand{\mmed}{\ensuremath{M_{\rm{med}}}\xspace}
+\newcommand{\mMed}{\ensuremath{M_{\rm{med}}}\xspace}
+\newcommand{\mZ}{\ensuremath{M_{\rm{Z}}}\xspace}
+\newcommand{\mA}{\ensuremath{M_{A}}\xspace}
+\newcommand{\ma}{\ensuremath{M_{a}}\xspace}
+\newcommand{\mH}{\ensuremath{M_{H}}\xspace}
+\newcommand{\mHc}{\ensuremath{M_{H^{\pm}}}\xspace}
+\newcommand{\mh}{\ensuremath{M_{h}}\xspace}
+\newcommand{\mt}{\ensuremath{M_{t}}\xspace}
+
+% Couplings
+\newcommand{\gDM}{\ensuremath{g_{\rm{DM}}}\xspace}
+\newcommand{\gq}{\ensuremath{g_q}\xspace}
+\newcommand{\gSM}{\gq}
+\newcommand{\gdm}{\gDM}
+\newcommand{\ifb}{\ensuremath{\rm{fb}^{-1}}\xspace}
+
+% Other parameters
+\newcommand{\sinp}{\ensuremath{\sin\theta}\xspace}
+\newcommand{\cosp}{\ensuremath{\cos\theta}\xspace}
+\newcommand{\sinbma}{\ensuremath{\sin(\beta - \alpha)}\xspace}
+\newcommand{\cosbma}{\ensuremath{\cos(\beta - \alpha)}\xspace}
+\newcommand{\tanb}{\ensuremath{\tan\beta}\xspace}
+\newcommand{\lap}[1]{\lambda_{P#1}} % can use like \lap1 , \lap2
+\newcommand{\lam}[1]{\lambda_{#1}} % can use like \lam3
+
+% Search channels
+\newcommand{\hdm}{\ensuremath{h+\textrm{DM}}\xspace}
+\newcommand{\monoh}{\ensuremath{h+\MET}\xspace}
+\newcommand{\monohbb}{\ensuremath{h(bb)+\MET}\xspace}
+\newcommand{\monoz}{\ensuremath{Z+\MET}\xspace}
+\newcommand{\monozll}{\ensuremath{Z(\ell\ell)+\MET}\xspace}
+\newcommand{\monozhad}{\ensuremath{Z(\textrm{had})+\MET}\xspace}
+
+% Software/Program/Model names
+\newcommand{\mg}{\textsc{MadGraph~5}\xspace}
+\newcommand{\mgamcnlo}{MG5\_aMC@NLO\xspace}
+\newcommand{\dmsimp}{\textsc{DMsimp}\xspace}
+\newcommand{\maddm}{\textsc{MadDM}\xspace}
+\newcommand{\hdma}{\ensuremath{\textrm{2HDM+a}}\xspace}
+
+% Misc
+\newcommand{\GamA}{\ensuremath{\Gamma_{A}}\xspace}
+\newcommand{\Uli}{\color{red}}
+\definecolor{cerulean}{RGB}{44,150,207}
+\newcommand{\ATLASComments}{\color{cerulean}}
+\newcommand{\bra}[1]{\langle #1|}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\sens}{\mathcal{S}\xspace}
+\newcommand{\senstot}{\mathcal{S}_\textrm{tot}\xspace}
+\newcommand{\mathsc}[1]{\text{\textsc{#1}}}
+\newcommand{\vev}[1]{\langle {#1} \rangle}
+
+\DeclareMathOperator{\arccot}{arccot}
+
+\def\be   {\begin{equation}}   \def\ee   {\end{equation}}
+\def\ba   {\begin{array}}      \def\ea   {\end{array}}
+\def\bea  {\begin{eqnarray}}   \def\eea  {\end{eqnarray}}
+\def\bean {\begin{eqnarray*}}  \def\eean {\end{eqnarray*}}
+\def\nn{\nonumber}
+
+
+\allowdisplaybreaks
+
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\def\bm#1{\mbox{\boldmath$#1$\unboldmath}} 
+
+\begin{document}
+\title{\begin{boldmath} \huge Snowmass LOI: Displaying dark matter constraints from colliders with varying simplified model parameters \vspace{7mm} \end{boldmath}}
+
+%%%%%%
+
+%Add your name here!
+
+\author[1]{Andreas~Albert,}
+\affiliation[1]{Boston University, Dept.\ of Physics, 590 Commonwealth Avenue, Boston, \\ MA 02215, USA}
+
+\author[2]{Antonio~Boveia,}
+\affiliation[2]{Ohio State University and Center for Cosmology and Astroparticle Physics, \\
+191 W. Woodruff Avenue Columbus, OH 43210, USA}
+
+\author[3,*]{Oleg~Brandt,}
+\affiliation[3]{Cavendish Laboratory, JJ Thomson Avenue, Cambridge CB3 0HE, UK}
+
+\author[4]{Eric~Corrigan,}
+\affiliation[4]{Fysiska institutionen, Lunds universitet, Professorsgatan 1, Lund, Sweden}
+
+\author[1]{Zeynep~Demiragli,}
+
+\author[4]{Caterina~Doglioni,}
+
+\author[2]{Boyu~Gao,}
+
+\author[5,*]{Ulrich~Haisch,}
+\affiliation[5]{Max Planck Institute for Physics, F{\"o}hringer Ring 6,  80805 M{\"u}nchen, Germany}
+
+\author[6,*]{Philip~Harris,}
+\affiliation[6]{Massachusetts Institute of Technology, 77 Massachusetts Avenue, Cambridge, MA, USA}
+
+\author[6]{Jeffrey~Krupa,}
+
+\author[7]{Greg~Landsberg,}
+\affiliation[7]{Brown University, Dept.\ of Physics, 182 Hope St, Providence, RI 02912, USA}
+
+\author[7]{Alexander~Moreno,}
+\affiliation[7]{Universidad Antonio Nari\~no, Facultad de Ciencias, Departamento de F\'isica, Carrera 10 No. 17-35, Ibagu\'e, Colombia}
+
+\author[9]{Katherine~Pachal,}
+\affiliation[9]{Duke University, Durham, NC 27708, USA}
+
+\author[10,*]{Priscilla~Pani,}
+\affiliation[10]{DESY Zeuthen, Platanenallee 6, 15738 Zeuthen, Germany}
+
+\author[11,*]{Tim~M.~P.~Tait,}
+\affiliation[11]{University of California Irvine, Irvine, CA 92697, USA}
+
+\author[7]{David~Yu,}
+
+\author[12]{Felix~Yu,}
+\affiliation[12]{Institut f{\"u}r Physik WA THEP, Johannes Gutenberg-Universit{\"a}t Mainz, Staudingerweg 7, 55128 Mainz, Germany}
+
+\author[13]{Lian-Tao~Wang}
+\affiliation[13]{Department of Physics, University of Chicago, Chicago, IL. 60637 USA}
+
+\affiliation[*]{LHC DM WG conveners}
+
+\affiliation[]{}
+\affiliation[]{Contact address: lhc-dmwg-contributors-couplingscan@cern.ch}
+
+%\hfill CERN-LPCC-2018-XX
+
+%\abstract{
+%}  
+
+\renewcommand\contentsname{} % the empty name
+
+\notoc 
+
+\maketitle
+
+%\newpage 
+
+\vskip20pt
+
+
+Dark matter~(DM) is one of the main science drivers of the particle and astroparticle physics community.  
+Determining the nature of DM will require a broad approach, with multiple experiments pursuing different experimental hypotheses.
+
+DM particles could be produced at particle colliders, and in such a case DM searches at collider experiments provide insight on DM complementary to searches in direct and indirect detection experiments, and to astrophysical evidence.
+
+In order to compare results from a wide variety of experiments, a common theoretical framework is required. Among the numerous theoretical models that describe DM  (see~e.g.~\cite{doi:10.1146/annurev-astro-082708-101659}, and \cite{Kahlhoefer:2017dnp,doi:10.1146/annurev-nucl-101917-021008} for collider-focused reviews), the ATLAS and CMS experiments at the Large Hadron Collider~(LHC) have adopted a series of simplified models that include DM  particles as benchmarks for their searches~\cite{ABERCROMBIE2020100371}.
+
+In these models, the interaction between Standard Model (SM) and the DM particles is mediated by a new particle, called a mediator. The interaction strength is controlled by the couplings of the mediator to DM and to SM particles. 
+
+So far, the presentation of LHC results as well as the presentation of projections of future hadron collider experiments has focused on four benchmark scenarios with different choices of couplings to quarks and leptons, as recommended by the Dark Matter Working Group~\cite{BOVEIA2020100365, ALBERT2019100377}.
+
+In this work, we plan to describe methods to extend those four benchmark scenarios to scenarios with arbitrary couplings, and release the corresponding code for use in further studies and projections of collider DM searches in the framework of simplified models. This will extend the applicability of the comparisons of collider searches to accelerator experiments that are sensitive to smaller couplings, and give a more complete picture of the coupling dependence of the sensitivity of DM collider searches when compared to direct and indirect detection searches. By using semi-analytical methods to model the dependence, we plan to drastically reduce the need for computing resources relative to traditional approaches based on the generation of additional simulated signal samples.
+
+We plan to focus on $s$-channel DM simplified models, where the mediator particle has either vector, axial-vector, scalar or pseudoscalar couplings with DM and SM particles. This work will cover collider searches for visible decays of the mediator particles, as well as for searches targeting the invisible particles via the associated production of one or more SM particles~\cite{ATL-PHYS-PUB-2020-021,CMSSummary}.
+
+\bibliography{CouplingScan-whitepaper}
+\bibliographystyle{JHEP}
+
+\end{document}
+
+%Here ends the LOI version
+
+\newpage 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+\label{sec:introduction}
+
+Explain goal - to be able to scale results in one model/set of parameters to any other with reasonable accuracy without resorting to generating events.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Models considered}
+\label{sec:models}
+
+Considering both vector and axial-vector mediator $s$-channel models - be sure to add citations to original DMWG papers.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Resonant final states}
+
+
+\subsection{Di-jet and di-jet+X}
+
+\subsection{Di-lepton}
+
+Discuss the di-lepton final state requires accounting for widths more carefully since the resolution is much better.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mono-x final states}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Example}
+
+Use existing ATLAS or CMS public data from HEPData to show this working?
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\acknowledgments 
+
+[To be updated] The research of A.~Boveia is supported by the U.S. DOE grant  DE-SC0011726. C.~Doglioni has received funding from the European Research Council under the European Union's Horizon 2020 research and innovation program (grant agreement 679305) and from the Swedish Research Council. U.~Haisch acknowledges the hospitality and support of the CERN Theoretical Physics Department. The work of T.~M.~P.~Tait is supported in part by NSF grant PHY-1316792. We gratefully acknowledge the support by the U.S. DOE. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+
+\section{Appendix}
+\label{app:recast}
+
+Document public code here?
+
+\newpage 
+
+\bibliography{CouplingScan-whitepaper}
+\bibliographystyle{JHEP}
+
+
+
+\end{document}
