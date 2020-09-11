@@ -262,7 +262,6 @@ The approximations used for visible resonant final states in Section~\ref{sec:re
 
 % How have they been handled previously? Discuss method.
 Previously, ATLAS and CMS \metplusx analyses have generated a grid of signal points in one of the four benchmark scenarios at full reconstruction level and used these to determine the region of \mMed-\mDM space excluded in that scenario~\cite{atlas_monojet_36ifb, cms_monojet_12ifb}. Three additional grids of signal points are then generated at leading order and particle level in order to obtain cross section estimates for each point in the additional three benchmark scenarios. The ratio of cross sections between the points in the original scenario and the target scenarios is used to scale the limits, resulting in a new estimate of the excluded and non-excluded points within the target scenario. 
-{\color{red} Someone from CMS please confirm this is accurate for you?} 
 Using signal generation to determine cross sections creates a time and CPU limitation on the number of scenarios which can be explored. 
 % What do we begin from? Mass-mass exclusion plane in one of our models for some fixed set of parameter values
 Therefore the goal of these studies is to use the same starting information - a full signal grid in the \mMed-\mDM for one coupling scenario - and determine a method for rescaling to another target scenario without requiring the generation of many individual signal points. 
@@ -276,7 +275,7 @@ The method developed here keeps these same assumptions, producing a re-scaling b
 The semi-analytical rescaling method developed here for \metplusx signatures has two separate components. One can be used to rescale a source scenario to another set of couplings within the same overall model, while the other should be used when the source scenario in one model is rescaled to a target in a different model (e.g. vector mediator to axial-vector mediator).
 
 % Cite original paper saying approximations have been given before for scaling on and off-shell, but that we make the simple extension of considering the integral of the entire propagator.
-In the original whitepaper defining the simplified models studied here, it is specified that the cross-section scaling can be estimated using the integral of the Breit-Wigner propagator for the mediator~\cite{Abercrombie:2015wmb}. Several approximations of this integral are given, corresponding to the different regimes of on-shell mediators, off-shell mediators, and effective field theories. In order to smoothly handle the on-shell to off-shell transition, we instead use the full integral of the propagator over the permitted phase space $s \geq 4 \mDM^2$:
+In the original whitepaper defining the simplified models studied here, it is specified that the cross section scaling can be estimated using the integral of the Breit-Wigner propagator for the mediator~\cite{Abercrombie:2015wmb}. Several approximations of this integral are given, corresponding to the different regimes of on-shell mediators, off-shell mediators, and effective field theories. In order to smoothly handle the on-shell to off-shell transition, we instead use the full integral of the propagator over the permitted phase space $s \geq 4 \mDM^2$:
 \begin{align}
 \mathcal{I}_{\text{prop}} =&\  g_q^2 g_\chi^2 \int_{4\mDM^2}^{\infty} \frac{ds}{(s-\mMed^2)^2+\mMed^2\Gamma^2} \\
 =&\  \frac{g_q^2 g_\chi^2}{\Gamma\mMed} \left(\frac{\pi}{2} + \arctan{\left(\frac{\mMed^2 - 4 \mDM^2}{\Gamma\mMed}\right)} \right)\,.
@@ -286,32 +285,33 @@ Coupling dependence comes not only from the explicit $g_q^2 g_\chi^2$ factor but
 $\mathcal{I}_{\text{prop}}$ is easily analytically calculable and the ratio of its value for two different coupling scenarios at a given \mDM and \mMed provides a robust estimate of the cross section in the target scenario, so long as both assume the same mediator type.
 
 % Show example
-The $\mathcal{I}_{\text{prop}}$ scaling procedure is illustrated in Figure~\ref{fig:propagator_scaling} using the ATLAS $\met+\gamma$ analysis in 36 \ifb of data~\cite{monophoton}. Circles show the locations of the signal points used; white points are excluded while red points are not excluded. 
+The $\mathcal{I}_{\text{prop}}$-based scaling procedure is illustrated in Figure~\ref{fig:propagator_scaling} using the ATLAS $\met+\gamma$ analysis in 36 \ifb of data~\cite{monophoton}. Circles show the locations of the signal points used. Each signal point has a $z$-axis value of theoretical cross section divided by excluded cross section; white points are those with $z<1$ and are excluded while red points have $z>1$ and are not excluded. The red curves show the exclusion contours reported by the analysis in each plane. The blue shades are a linear interpolation between the points used to illustrate the cross section exclusion surface. In Figure~\ref{subfig:monophoton_A1} no reinterpretation is done: the values at each point are taken directly from the paper and overlaid with the corresponding exclusion curve. In Figure~\ref{subfig:monophoton_A2} the values at each point are calculated using the $\mathcal{I}_{\text{prop}}$ scaling procedure starting from the values in Figure~\ref{subfig:monophoton_A1}. The white and red colour coding of points is based on these rescaled values, as is the linear interpolation in blue. The good agreement between the contour curve taken from the paper and the points marked as excluded by the rescaling method serves as a validation of the rescaling.
+
 %-----------------------------------
 \begin{figure}[htp!]
   \begin{center}
   \begin{subfigure}[b]{0.49\textwidth}  
-    \includegraphics[width=\textwidth]{figures/monox/EXOT-2016-27_AV_gq0p25_gchi1p0_gl0p0_compare.pdf}
+    \includegraphics[width=\textwidth]{figures/monox/EXOT-2016-32_AV_gq0p25_gchi1p0_gl0p0_compare.pdf}
     \caption{}
     \label{subfig:monophoton_A1}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}  
-    \includegraphics[width=\textwidth]{figures/monox/EXOT-2016-27_AV_gq0p1_gchi1p0_gl0p1_compare.pdf}
+    \includegraphics[width=\textwidth]{figures/monox/EXOT-2016-32_AV_gq0p1_gchi1p0_gl0p1_compare.pdf}
     \caption{}
     \label{subfig:monophoton_A2}  
   \end{subfigure}
   
-  \caption{A caption}
+  \caption{Original cross section limits with couplings $g_q=0.25, g_\chi=1.0, g_l = 0.0$ (\subref{subfig:monophoton_A1}) and rescaled cross section limits with couplings $g_q=0.1, g_\chi=1.0, g_l = 0.1$ (\subref{subfig:monophoton_A2}) for an axial-vector mediator model using the ATLAS $\met+\gamma$ analysis results. Limits are presented as a function of mediator mass and dark matter mass for fixed coupling values. At each signal point, the value of $z = \sigma_{\text{theory}}/\sigma_{\text{excluded}}$ is calculated: points where $z<1$ are excluded and plotted in white, while points where $z>1$ are not excluded and plotted in red. A linear interpolation between the $z$ values at the points illustrates the shape of this exclusion surface and is shown as a blue gradient. The solid red curves are taken from the published $\met+\gamma$ results and show the exclusion contour $\sigma_{\text{theory}}/\sigma_{\text{excluded}} = 1$. The level of agreement between the excluded points and the published contour in~(\subref{subfig:monophoton_A2}) is a measure of the similarity in performance between the $\mathcal{I}_{\text{prop}}$ scaling procedure and the Monte Carlo based method used in the ATLAS analysis.}
   \label{fig:propagator_scaling}
   \end{center}
 \end{figure}
 %-----------------------------------
 
 % Introduce that we need full cross section to go between models.
-However, a ratio based on $\mathcal{I}_{\text{prop}}$ when the target scenario includes a different mediator model than the source scenario\ldots [Elaborate]
+Rescaling cross sections using a ratio based on $\mathcal{I}_{\text{prop}}$ is no longer sufficient when the target scenario uses a different mediator model than the source scenario. Additional mass-dependent terms in the cross section vary between models, so while they cancel within a single model and can be ignored in favour of the simple propagator-based expression, they must be correctly accounted for when rescaling from one model to another. We therefore calculate a more complete cross section whose ratio can be used to perform across-model rescaling.
 
 % Introduce that for cross sections at LO that amounts to only considering this one diagram
-At leading order, the production of an $s$-channel vector or axial-vector mediator decaying to two dark matter particles includes just one diagram, $pp\rightarrow Z^\prime \rightarrow \chi \chi$. The LO signal contribution to each \metplusx analysis consists of that diagram with the additional ISR radiation of some object (jet, photon, etc) from one of the incoming quarks. We consider that the properties and probability of this radiation are independent of the couplings of the DM model and therefore act as a consistent scale factor on the cross-section which will cancel in the ratio for a specified pair of masses \mMed, \mDM. Therefore, to calculate the LO scale factor translating between two scenarios with different mediator models, the cross section for that single diagram in both models is sufficient. The parton-level cross sections as functions of the interaction scale $S$ are given by the following equations, discounting scale factors which cancel in the ratio:
+At leading order, the production of an $s$-channel vector or axial-vector mediator decaying to two dark matter particles includes just one diagram, $pp\rightarrow Z^\prime \rightarrow \chi \chi$. The LO signal contribution to each \metplusx analysis consists of that diagram with the additional ISR radiation of some object (jet, photon, etc) from one of the incoming quarks. We consider that the properties and probability of this radiation are independent of the couplings of the DM model and therefore act as a consistent scale factor on the cross section which will cancel in the ratio for a specified pair of masses \mMed, \mDM. Therefore, to calculate the LO scale factor translating between two scenarios with different mediator models, the cross section for that single diagram in both models is sufficient. The parton-level cross sections as functions of the interaction scale $S$ are given by the following equations, discounting scale factors which cancel in the ratio:
 
 % Introduce full cross sections for vector, axial vector
 \begin{equation}
@@ -324,16 +324,39 @@ and
 where $\Gamma$ is the total width of the mediator (non-zero even when decays to dark matter are off-shell).
 
 % Discuss PDFs.
-To calculate cross sections with sufficient accuracy for the rescaling procedure, a hadron-level quantity must be calculated accounting for parton distribution functions (PDFs). The full cross section is thus calculated semi-analytically by performing a two dimensional integral over the longitudinal momentum fractions $x_1, x_2$ of the interacting partons within the allowed range. Where $S$ is the squared centre-of-mass energy (i.e. $\sqrt{S} = 13$ TeV), $\hat{s} = x_1 x_2 S$ is the scale of the interaction, and $f^a$ and $f^b$ are the PDFs of the incoming partons, the total cross section is
+To calculate cross sections with sufficient accuracy for the rescaling procedure, a hadron-level quantity must be determined accounting for parton distribution functions (PDFs). The full cross section is thus calculated semi-analytically by performing a two dimensional integral over the longitudinal momentum fractions $x_1, x_2$ of the interacting partons within the allowed range. Where $S$ is the squared centre-of-mass energy (i.e. $\sqrt{S} = 13$ TeV), $\hat{s} = x_1 x_2 S$ is the scale of the interaction, and $f^a$ and $f^b$ are the PDFs of the incoming partons, the total cross section is
 \begin{equation}
 \sigma_{V/AV}^{\text{tot}} = \int_{4 \mDM^2}^{\text{S}} \int_{4 \mDM^2}^{x_2 S}  f^a(x_1,\hat{s})  f^b(x_2,\hat{s}) \sigma_{V/AV}(\hat{s}) dx_1 dx_2\,.
 \end{equation}
 This integral is performed numerically in the two models and the ratio at each point is taken as the scale factor to convert between them. The implementation uses LHAPDF and so provides a wide range of PDF sets and flavour schemes, although results are found to be fairly independent of the selection~\cite{Buckley:2014ana}.
 
-% Show monojet example between models
+% Show example scaling between models
+A demonstration of the $\sigma_{V/AV}^{\text{tot}}$-based scaling procedure is given in Figure~\ref{fig:pdf_scaling}. The $z$-value at each point in Figure~\ref{subfig:monophoton_V2} is found using the ratio of the vector and axial-vector cross sections $\sigma_{V}^{\text{tot}}$ and $\sigma_{AV}^{\text{tot}}$ applied to the axial-vector limits from Figure~\ref{subfig:monophoton_A1}. The success of this rescaling method is again illustrated by the agreement between the excluded points (white) determined by the rescaling and the solid curve obtained from the analysis paper. Figure~\ref{subfig:monophoton_V2} is created by further applying a $\mathcal{I}_{\text{prop}}$ rescaling to the results in Figure~\ref{subfig:monophoton_V1}. Even after this iterative application of $\sigma_{V/AV}^{\text{tot}}$ and $\mathcal{I}_{\text{prop}}$ rescaling, the agreement between the points and the published results is fair.
+
+%-----------------------------------
+\begin{figure}[htp!]
+  \begin{center}
+  \begin{subfigure}[b]{0.49\textwidth}  
+    \includegraphics[width=\textwidth]{figures/monox/EXOT-2016-32_V_gq0p25_gchi1p0_gl0p0_compare.pdf}
+    \caption{}
+    \label{subfig:monophoton_V1}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}  
+    \includegraphics[width=\textwidth]{figures/monox/EXOT-2016-32_V_gq0p1_gchi1p0_gl0p01_compare.pdf}
+    \caption{}
+    \label{subfig:monophoton_V2}  
+  \end{subfigure}
+  
+  \caption{Rescaled cross section limits with couplings $g_q=0.25, g_\chi=1.0, g_l = 0.0$ (\subref{subfig:monophoton_V1}) and $g_q=0.1, g_\chi=1.0, g_l = 0.01$ (\subref{subfig:monophoton_V2}) for a vector mediator model using the ATLAS $\met+\gamma$ analysis results. Limits are presented as a function of mediator mass and dark matter mass for fixed coupling values. At each signal point, the value of $z = \sigma_{\text{theory}}/\sigma_{\text{excluded}}$ is calculated: points where $z<1$ are excluded and plotted in white, while points where $z>1$ are not excluded and plotted in red. A linear interpolation between the $z$ values at the points illustrates the shape of this exclusion surface and is shown as a blue gradient. The solid red curves are taken from the published $\met+\gamma$ results and show the exclusion contour $\sigma_{\text{theory}}/\sigma_{\text{excluded}} = 1$. The level of agreement between the excluded points and the published contour is a measure of the performance of the $\sigma_{V/AV}^{\text{tot}}$ scaling procedure in~(\subref{subfig:monophoton_V1}) and of the combination of both procedures in~(\subref{subfig:monophoton_V2}).
+  }
+  \label{fig:pdf_scaling}
+  \end{center}
+\end{figure}
+%-----------------------------------
 
 % Summarise algorithm: use full cross section integral to translate initial plane into any other models desired. 
 % Use propagator scaling to scan coupling exclusions within that model.
+The full recommended procedure for rescaling \metplusx analysis results is therefore to use the $\sigma_{V/AV}^{\text{tot}}$-based rescaling procedure to convert from the original scenario into one scenario in each differing target model ({\color{red} currently only possible for $V\rightarrow AV$ or $AV\rightarrow V$}). The $\mathcal{I}_{\text{prop}}$-based rescaling procedure can then be used to convert to other scenarios within the same model, either from this reinterpreted scenario or from either the original scenario.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Combined examples}
